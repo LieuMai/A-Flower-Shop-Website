@@ -1,0 +1,362 @@
+@import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital@1&family=Open+Sans&family=Arima+Madurai:wght@200&display=swap');
+
+
+:root {
+	--text: #66575c;
+	--lilac: #c69bb9;
+	--light: #f6eff7;
+	--primary: #F5E6F7;
+	--not-white: #f7f4f6;
+	--light-lilac: #e2cee2;
+}
+
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	color: var(--text);
+	line-height: 1.6;
+	background-color: var(--not-white);
+}
+
+ul {
+	list-style-type: none;
+}
+
+a {
+	text-decoration: none;
+	color: var(--text);
+}
+
+h1,h2 {
+	font-family: 'Old Standard TT';
+	font-style: italic;
+	font-weight: 400;
+	color: var(--text);
+	margin: 10px 0;
+}
+
+p {
+	margin: 5px 0;
+	font-family: 'Open Sans';
+}
+
+img {
+	width: 100%;
+	height: auto;
+}
+
+/* Navbar */
+
+.navbar {
+	position: fixed;
+	z-index: 1024;
+	width: 100%;
+	background-color: var(--primary);
+	height: 50px;
+}
+
+.navbar .container {
+	overflow: hidden;
+	text-transform: uppercase;
+	font-weight: 400;
+}
+
+.logo {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 20px;
+	letter-spacing: 2px;
+}
+
+.navbar .flex {
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.navbar ul {
+	display: flex;
+}
+
+.navbar a {
+	padding: 0 10px;
+	margin: 0 5px;
+	font-size: 14px;
+}
+
+.navbar a:hover {
+	color: var(--lilac);
+}
+
+/* Home section */
+
+.home {
+	position: relative;
+	height: 750px;
+	background: url(media/image01.jpg) no-repeat center center;
+	background-size: cover;
+	text-align: center;
+}
+
+.home h2 {
+	color: var(--light);
+	font-size: 40px;
+	text-shadow: 0px 2px 3px rgba(0,0,0,0.5);
+}
+
+.home p {
+	color: var(--light);
+	font-size: 25px;
+	font-weight: 100;
+	font-family: "Arima Madurai";
+}
+
+.home .btn {
+	color: var(--light);
+	font-size: 15px;
+	cursor: pointer;
+	text-transform: uppercase;
+}
+
+.home .btn:after {
+    content: '';
+    display: block;
+    margin: auto;
+    width: 0;
+    height: .5px;
+    background: transparent;
+    transition: width .3s ease, background-color .5s ease;
+}
+
+.home .btn:hover:after {
+    width: 100%;
+ 	background: var(--light);
+}
+
+/* About */
+
+.about .container{
+	position: relative;
+	margin: 20px auto;
+}
+
+.about p, h3 {
+	margin: 10px auto;
+	padding: 0 20px;
+	text-align: center;
+	font-size: 20px;
+	font-family: 'Arima Madurai';
+}
+
+/* Product */
+
+.product .container {
+	margin: 10px auto;
+	padding: 40px 0;
+}
+
+.product-card {
+	background: var(--not-white);
+	margin: 10px;
+}
+
+.product-card .card-img {
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+}
+
+.product-card:hover {
+	background: var(--primary);
+	transition: .5s ease;
+}
+
+.product-card .card-img img {
+	transform: scale(1.2);
+}
+
+
+.product-card:hover .card-img img {
+	object-fit: contain;
+	transform: scale(1.3);
+	filter: brightness(0.9);
+	transition: .5s ease;
+}
+
+.product-card .card-text  {
+	margin: 20px 10px;
+	padding: 0 10px;
+	font-size: 15px;
+}
+
+.product-card .btn {
+ 	border: 2px solid var(--primary);
+    outline: none;
+    background: none;
+}
+
+.product-card .btn:hover {
+	background: var(--lilac);
+	color: white;
+}
+
+.product-card .flex {
+	flex-direction: column;
+}
+
+/* Services */
+
+.services .container {
+	padding: 0 10px;
+	margin: 30px auto 60px;
+}
+
+.services .grid {
+	grid-template-columns: repeat(4, 1fr);
+	column-gap: 20px;
+}
+
+.service-card {
+	margin: 10px auto;
+	height: 300px;
+	width: 100%;
+	overflow: hidden;
+}
+
+.service-card .card-img {
+	opacity: 1;
+	display: block;
+	transition: .5 ease;
+	backface-visibility: hidden;
+}
+
+.service-card .card-text {
+	transition: .5s ease;
+	opacity: 0;
+	padding: 2px;
+	position: relative;
+	text-align: center;
+	background: var(--lilac);
+	color: white;
+    transform: translateY(-110%);
+}
+
+.service-card .card-text p {
+	font-family: 'Arima Madurai';
+}
+
+.service-card:hover .card-img img {
+	opacity: 0.8;
+	filter: brightness(0.6);
+}
+
+.service-card:hover .card-text {
+	opacity: 1;
+}
+
+/* Call for action */
+
+.call .btn {
+	padding: 30px 120px;
+}
+
+.call .call-btn {
+	border: 2px solid var(--text);
+	margin: 20px auto 80px;
+	font-size: 20px;
+	border-radius: 60px;
+}
+
+.call .call-btn:hover {
+	border-color: var(--light-lilac);
+	color: var(--light-lilac);
+}
+
+/* Footer */
+
+.footer {
+	border-top: .5px solid var(--lilac);
+	background: var(--primary);
+	font-family: 'Arima Madurai';
+}
+
+.footer .grid {
+	grid-template-columns: .6fr 3fr 1fr;
+	column-gap: 10px;
+}
+
+.footer .container {
+	padding: 30px 10px;
+}
+
+.footer ul {
+	display: flex;
+}
+
+.footer a {
+	margin: 0 5px;
+	padding: 0 5px;
+	transition: .5s ease;
+}
+
+.footer-media a {
+	font-size: 20px;
+}
+
+.footer-media a:hover {
+	color: var(--lilac);
+}
+
+.footer-options , .footer-auth {
+	font-size: 15px;
+}
+
+.footer-options a:hover {
+	color: var(--lilac);
+	font-size: 16px;
+}
+
+/* Ultilities */
+
+.container {
+	max-width: 1300px;
+	margin: 0 auto;
+	overflow: auto;
+	padding: 0 40px;
+}
+
+.dot-bg {
+	background: url(media/bg-dot.jpg);
+	background-size: 500px;
+}
+
+.flex {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	column-gap: 20px;
+	justify-content: center;
+	align-items: center;
+}
+
+
+.btn {
+	color: var(--text);
+	font-size: 12px;
+	padding: 5px;
+	cursor: pointer;
+	text-transform: uppercase;
+}
